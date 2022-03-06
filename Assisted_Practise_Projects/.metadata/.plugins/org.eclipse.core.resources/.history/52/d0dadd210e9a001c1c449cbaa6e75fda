@@ -1,0 +1,15 @@
+package Com.pack1;
+import java.util.*;
+
+public class QueueProgram 
+{
+   public static void main(String[] args) 
+   {  
+    Queue<String> str_queue = new LinkedList<>();
+    str_queue.add("Bike");
+    str_queue.add("two");
+    str_queue.add("three");
+    str_queue.add("four");
+    System.out.println("The Queue contents:" + str_queue);
+    }
+}

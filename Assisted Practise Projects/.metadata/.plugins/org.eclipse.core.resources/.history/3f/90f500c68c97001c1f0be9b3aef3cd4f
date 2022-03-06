@@ -1,0 +1,33 @@
+package com.pack1;
+public class RunningThread implements Runnable{
+	 
+    public static int myCount = 0;
+    public RunningThread (){
+         
+    }
+    public void run() {
+        while(RunningThread .myCount <= 10){
+            try{
+                System.out.println("Expl Thread: "+(++RunningThread .myCount));
+                Thread.sleep(100);
+            } catch (InterruptedException iex) {
+                System.out.println("Exception in thread: "+iex.getMessage());
+            }
+        }
+    } 
+    public static void main(String a[]){
+        System.out.println("Starting Main Thread...");
+        RunningThread  rt = new RunningThread ();
+        Thread t = new Thread(rt);
+        t.start();
+        while(RunningThread .myCount <= 10){
+            try{
+                System.out.println("Main Thread: "+(++RunningThread .myCount));
+                Thread.sleep(100);
+            } catch (InterruptedException iex){
+                System.out.println("Exception in main thread: "+iex.getMessage());
+            }
+        }
+        System.out.println("End of Main Thread...");
+    }
+}
